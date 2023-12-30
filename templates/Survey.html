@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Take Your Daily Survey
+{% endblock %}
+
+{% block main %}
+
+    <form action="/survey" method="post">
+
+
+
+        <div>
+        <h1>
+
+             Daily Survey
+        </h1>
+        </div>
+
+        <div>
+
+          <p>Have You recently tested positive for COVID-19?</p>
+        </div>
+
+        <div>
+
+         <input type="radio" id="infectedChoice1"
+            name="test" value="Infected">
+            <label for="infectedChoice1">Yes</label>
+        <input type="radio" id="infectedChoice2"
+            name="test" value="TBD" checked >
+            <label for="infectedChoice1">No</label>
+
+        </div>
+        <hr>
+        <div class="form-group">
+        <table border="1">
+        <div>
+        <tr>
+          <p>Please choose the option that best describes how you are feeling:</p>
+        </tr>
+        </div>
+
+        <div>
+        <tr>
+         <input type="radio" id="contactChoice1"
+            name="status" value="Healthy" checked >
+            <label for="contactChoice1">I havent felt any symptoms</label>
+
+        </tr>
+        </div>
+
+        <div>
+        <tr>
+         <input type="radio" id="contactChoice2"
+            name="status" value="Minor Risk">
+            <label for="contactChoice2">I have had some minor symptoms (occassional cough), mild headache</label>
+        </div>
+        <div>
+        </tr>
+        <tr>
+         <input type="radio" id="contactChoice3"
+            name="status" value="High Risk">
+            <label for="contactChoice3">I have experienced many symptoms associated with COVID-19 (Cough, Fever, Sneeze, High Temperature, Shortness of Breath)</label>
+
+        </tr>
+        </div>
+        </table>
+
+
+        </div>
+
+       <hr>
+        <h1>
+
+            (Optional) Have You Gone Out Today? If so Providing the locations would be helpful!
+
+        </h1>
+
+        </div>
+        <hr>
+        <div class="form-group">
+
+            <h5>
+                Address<input class="form-control" name="address1" placeholder="Ex. 1204 Sterling Dr Columbus, OH, USA 20744" type="text"> Date: <input class="form-control" name="date1" placeholder="mm/dd/yyyy" type="date">
+
+            </h5>
+
+        </div>
+         </div>
+        <div class="form-group">
+
+            <h5>
+                Address<input class="form-control" name="address2" placeholder="Ex. 1204 Sterling Dr Columbus, OH, USA 20744" type="text"> Date: <input class="form-control" name="date2" placeholder="mm/dd/yyyy" type="date">
+
+            </h5>
+
+        </div>
+
+        </div>
+        <div class="form-group">
+
+            <h5>
+                Address<input class="form-control" name="address3" placeholder="Ex. 1204 Sterling Dr Columbus, OH, USA 20744" type="text"> Date: <input class="form-control" name="date3" placeholder="mm/dd/yyyy" type="date">
+
+            </h5>
+
+        </div>
+
+
+
+        <button class="btn btn-primary" type="submit"> Submit </button>
+    </form>
+{% endblock %}

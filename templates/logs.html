@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User Logs
+{% endblock %}
+
+{% block main %}
+    <div>
+
+                <h2>Your Activity History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>   <th>Health Status At The Time</th>  <th> Date/Time</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for log in index %}
+                        <tr>
+                        <td>{{log.activity}}</td>  <td>{{log.status}}</td>  <td>{{log.datetime}}</td>
+                        </tr>
+                        {% endfor %}
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+
+                    </tbody>
+                </table>
+            </div>
+<hr>
+            <div>
+
+                <h2>Your Travel History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>   <th>Health Status At The Time</th> <th> Travel Date </th> <th> Coordinates (lat, long) </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for log in travels %}
+                        <tr>
+                        <td>{{log.activity}}</td>  <td>{{log.status}}</td> <td>{{log.date}}</td> <td>{{log.lat}}, {{log.long}} </td>
+                        </tr>
+                        {% endfor %}
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+
+                    </tbody>
+                </table>
+            </div>
+{% endblock %}

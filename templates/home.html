@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+<h3>Hello {{name}}!</h3>
+<div>
+
+    <h1> Your Current Environmental Risk Level Is:</h1>
+</div>
+    {% if envrisk == 'High' %}
+<div>
+    <font color="red"><h2>High</h2></font>
+
+    <h3> Someone in Your Local Vicinity has tested positive for COVID-19 </h3>
+
+</div>
+
+
+    {% elif envrisk == 'Moderate'  %}
+
+    <div>
+    <font color="orange"><h2>Moderate</h2></font>
+
+    <h3> Someone in Your Local Vicinity has reported feeling symptoms associated with COVID-19, But has not yet been confirmed COVID-19 positive </h3>
+
+    </div>
+
+
+    {% elif envrisk == 'Minor'  %}
+
+    <div>
+        <font color="green"><h2>Minor</h2></font>
+
+        <h3> Someone in Your Local Vicinity has reported minor, common symptoms like occassional cough </h3>
+
+    </div>
+
+    {% elif envrisk == 'Low'  %}
+
+    <div>
+        <font color= #39FF14><h2>Low</h2></font>
+
+        <h3> Everyone in Your Local Vicinity has seems heathy! </h3>
+
+    </div>
+
+    {% endif %}
+<hr>
+<div>
+
+    <h1> Your Current Personal Risk Level Is:</h1>
+</div>
+    {% if personalstatus == 'Infected' %}
+<div>
+    <font color="red"><h2>Infected</h2></font>
+
+    <h3> You have tested positive for COVID-19. Try to avoid unnecessary contact. Get Well Soon! </h3>
+
+</div>
+
+
+    {% elif personalstatus == 'High Risk'  %}
+
+    <div>
+    <font color="orange"><h2>High </h2></font>
+
+    <h3> You have reported feeling symptoms associated with COVID-19, But have not yet been confirmed COVID-19 positive </h3>
+
+    </div>
+
+
+    {% elif personalstatus == 'Minor Risk'  %}
+
+    <div>
+        <font color="green"><h2>Minor</h2></font>
+
+        <h3> You have reported minor, common symptoms like occassional cough </h3>
+
+    </div>
+
+    {% elif personalstatus == 'Healthy'  %}
+
+    <div>
+        <font color= #39FF14><h2>Low, You Are Healthy!</h2></font>
+
+        <h3> You seem Heathly! Way to be Safe! </h3>
+
+    </div>
+
+    {% endif %}
+<hr>
+<div>
+
+    <h1> Your <font color=#dc143c>Crimson Contacts</font></h1>
+<h4> If you may have interacted with high risk users, consider getting tested!</h4>
+
+
+                        {% if not contacts %}
+                        <div> <h4> Looks Like You Have No <font color=#dc143c>Crimson Contacts!</font></h4></div>
+                         <h5><font color=#C0C0C0> This Means You Havent Run Into Any Other Users at Another Location Yet!</font></h5>
+                        {% else%}
+ <table>
+
+                    <tbody>
+                        {% for contact in contacts %}
+                        <tr>
+                        <td>You and (Anonymous User)</td> <td> who was {{contact.status}}</td> <td> Ran into eachother at {{contact.lat}} , {{contact.long}}</td>  <td>On {{contact.date}}</td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                        {% endif %}
+</div>
+
+{% endblock %}

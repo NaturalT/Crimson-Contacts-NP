@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Take Your Daily Survey
+{% endblock %}
+
+{% block main %}
+
+    <form action="/survey2" method="post">
+
+        <div>
+
+          <p>Have You Tested Negative for COVID-19 more than once at least a fortnite (two weeks) since testing positive?</p>
+        </div>
+
+        <div>
+
+         <input type="radio" id="recoveryChoice1"
+            name="recovery" value="Minor Risk">
+            <label for="recoveryChoice1">Yes</label>
+        <input type="radio" id="recoveryChoice2"
+            name="recovery" value="Infected" checked>
+            <label for="recoveryChoice2">No</label>
+
+        </div>
+        <h1>
+
+            (Optional) Going out is definitely not recommended while infected with COVID-19, but if you have gone out providing the locations would be helpful!
+
+        </h1>
+
+        </div>
+        <div class="form-group">
+
+            <h5>
+                Address<input class="form-control" name="address1" placeholder="Ex. 1204 Sterling Dr Columbus, OH, USA 20744" type="text"> Date: <input class="form-control" name="date1" placeholder="mm/dd/yyyy" type="date">
+
+            </h5>
+
+        </div>
+         </div>
+        <div class="form-group">
+
+            <h5>
+                Address<input class="form-control" name="address2" placeholder="Ex. 1204 Sterling Dr Columbus, OH, USA 20744" type="text"> Date: <input class="form-control" name="date2" placeholder="mm/dd/yyyy" type="date">
+
+            </h5>
+
+        </div>
+
+        </div>
+        <div class="form-group">
+
+            <h5>
+                Address<input class="form-control" name="address3" placeholder="Ex. 1204 Sterling Dr Columbus, OH, USA 20744" type="text"> Date: <input class="form-control" name="date3" placeholder="mm/dd/yyyy" type="date">
+
+            </h5>
+
+        </div>
+
+        <button class="btn btn-primary" type="submit"> Submit </button>
+    </form>
+
+{% endblock %}

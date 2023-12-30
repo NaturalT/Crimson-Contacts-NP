@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div>
+        <h1>
+
+            User Info
+
+        </h1>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="firstname" placeholder="First Name" type="text">
+            <input class="form-control" name="surname" placeholder="Last Name" type="text">
+            <input class="form-control" name="Age" placeholder="Age" type="number">
+        </div>
+
+        <div>
+        <h1>
+
+            User Preferences
+
+        </h1>
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Create Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="New Password" type="password">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+
+
+        <div>
+        <h1>
+
+            Address/ Location
+
+        </h1>
+
+        </div>
+        <div class="form-group">
+
+            <h5>
+                Country:  <input class="form-control" name="country" placeholder="Country (Ex. United States of America)" type="text"> State: <input class="form-control" name="state/province" placeholder="Ex. (Massachusetts)" type="text"> City: <input class="form-control" name="city" placeholder="City" type="text">
+
+            </h5>
+
+        </div>
+        <div class="form-group">
+
+            <h5>
+                Street Address: <input autocomplete="off" autofocus class="form-control" name="street address" placeholder="Ex. 1204 Sterling Dr" type="text"> Zip/Mail Code (US Only): <input class="form-control" name="zip" placeholder="Ex.(20002)" type="number">
+            </h5>
+
+        </div>
+
+
+<hr>
+ <p>*By registering with Crimson Contacts you consent to your data being used responsibly by our servers*</p>
+        <button class="btn btn-primary" type="submit"> Register </button>
+    </form>
+{% endblock %}
